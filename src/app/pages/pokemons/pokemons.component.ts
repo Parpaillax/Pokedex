@@ -12,31 +12,23 @@ import { PokemonsApiService } from '../../services/pokemons-api.service';
 export class PokemonsComponent implements OnInit {
   public allPokemons: any[] = [];
   public pokemonFiltered: any[] = [];
-  public generation: number | null = null;
+  public generation: number = 0;
 
   constructor(private route: ActivatedRoute, private pokemonApi: PokemonsApiService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.generation = +params['id']
-      this.getPokemons();
+      this.pokemonApi.getPokemons().subscribe({
+        next: (data) => {
+          this.allPokemons = data;
+          this.pokemonFiltered = this.pokemonApi.sortPokemonsByGeneration(this.allPokemons, this.generation);
+        },
+        error: (err) => {
+          console.error(err)
+        }
+      });
     })
-  }
-
-  getPokemons(): any {
-    this.pokemonApi.getPokemons().subscribe({
-      next: (data) => {
-        this.allPokemons = data;
-        this.sortPokemonsByGeneration();
-      },
-      error: (err) => {
-        console.error(err)
-      }
-    });
-  }
-
-  sortPokemonsByGeneration(): void {
-    this.pokemonFiltered = this.allPokemons.filter(pokemon => pokemon.generation === this.generation);
   }
 
 }
