@@ -1,0 +1,11 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-0 mx-auto flex flex-wrap">
+    <ul>
+      @for (pokemon of pokemonFiltered; track pokemon) {
+      <li>
+        {{pokemon.name.fr}}
+      </li>
+      }
+    </ul>
+  </div>
+</section>
