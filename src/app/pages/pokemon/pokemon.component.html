@@ -21,8 +21,13 @@
         suivant</button>
     </div>
     <div class="d-flex flex-col justify-center pt-10">
-      <h1 class="text-4xl font-bold mb-4">{{ pokemon.name.fr }} <span class="text-lg text-gray-500">({{ pokemon.name.en
-          }} / {{pokemon.name.jp}})</span></h1>
+      <div class="d-flex flex-col mb-4">
+        <h1 class="text-4xl font-bold">{{ pokemon.name.fr }}
+          <div class="d-flex flex-col">
+            <span class="text-lg text-gray-500">({{ pokemon.name.en }} / {{pokemon.name.jp}})</span>
+          </div>
+        </h1>
+      </div>
       <div class="flex items-center mb-4">
         <img [src]="pokemon.sprites.regular" alt="{{ pokemon.name.fr }} regular form" class="h-32 w-32 mr-4">
       </div>
