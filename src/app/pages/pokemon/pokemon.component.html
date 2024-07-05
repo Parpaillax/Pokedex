@@ -1,6 +1,6 @@
 <section>
   @if (pokemon) {
-  <div class="d-flex py-12">
+  <div class="d-flex py-12 items-center justify-center text-center">
     <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
       [routerLink]="'/generations/'+pokemon.generation">
       <button type="submit">
@@ -22,7 +22,7 @@
     </div>
     <div class="d-flex flex-col justify-center pt-10">
       <h1 class="text-4xl font-bold mb-4">{{ pokemon.name.fr }} <span class="text-lg text-gray-500">({{ pokemon.name.en
-          }})</span></h1>
+          }} / {{pokemon.name.jp}})</span></h1>
       <div class="flex items-center mb-4">
         <img [src]="pokemon.sprites.regular" alt="{{ pokemon.name.fr }} regular form" class="h-32 w-32 mr-4">
       </div>
