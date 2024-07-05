@@ -1,1 +1,45 @@
-<p>pokemon works!</p>
+<section>
+  @if (pokemon) {
+  <div class="d-flex py-12">
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      [routerLink]="'/generations/'+pokemon.generation">
+      <button type="submit">
+        Retour à la génération
+      </button>
+    </a>
+  </div>
+
+  <div class="max-w-3xl mx-auto p-4">
+    <div class="flex justify-between">
+      @if (pokemon.pokedex_id > 0) {
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-20 rounded-full"
+        [routerLink]="['/pokemon', pokemon.pokedex_id - 1]">Pokémon
+        précédent</button>
+      }
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-20 rounded-full"
+        [routerLink]="['/pokemon', pokemon.pokedex_id + 1]">Pokémon
+        suivant</button>
+    </div>
+    <div class="d-flex flex-col justify-center pt-10">
+      <h1 class="text-4xl font-bold mb-4">{{ pokemon.name.fr }} <span class="text-lg text-gray-500">({{ pokemon.name.en
+          }})</span></h1>
+      <div class="flex items-center mb-4">
+        <img [src]="pokemon.sprites.regular" alt="{{ pokemon.name.fr }} regular form" class="h-32 w-32 mr-4">
+      </div>
+      <p class="mb-2"><span class="font-semibold">Catégorie:</span> {{ pokemon.category }}</p>
+
+      <div class="mb-4">
+        <p class="font-semibold mb-1">Types:</p>
+        @for (type of pokemon.types; track type) {
+        <ul class="flex space-x-2">
+          <li class="flex items-center space-x-1">
+            <img [src]="type.image" alt="{{ type.name }}" class="h-6 w-6">
+            <span>{{ type.name }}</span>
+          </li>
+        </ul>
+        }
+      </div>
+    </div>
+  </div>
+  }
+</section>
