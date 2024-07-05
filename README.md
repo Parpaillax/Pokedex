@@ -1,27 +1,12 @@
-# Demo1
+# Pokedex by Parp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Projet fait avec Angular 18 pour un projet ENI.
+Je récupère les Pokemons depuis une API réalisée par un/une français(e)
+Lien de l'API : <https://tyradex.vercel.app/>
+Github : <https://github.com/Yarkis01/TyraDex>
 
-## Development server
+## Commande Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Il faut au préalable avoir télécharger NodeJS (j'ai utilisé la version 20.15.0) et NPM (j'ai utilisé la version 10.8.1)
+Une fois nodeJs et NPM installé sur le poste, vous pouvez utiliser la commande ``npm i`` pour installer les dépendances
+Une fois les dépendances installé il faut utiliser la commande ``ng serve -o`` (-o va ouvrir un navigateur une fois le serveur démarré)
