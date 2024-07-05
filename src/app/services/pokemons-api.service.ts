@@ -14,8 +14,12 @@ export class PokemonsApiService {
     return this.http.get(environment.apiURL)
   }
 
-  sortPokemonsByGeneration(allPokemons: any, generation: number): any {
-    return allPokemons.filter((pokemon: { generation: number; }) => pokemon.generation === generation);
+  sortPokemonsByGeneration(allPokemons: any, generation?: number): any {
+    if (!generation) {
+      return allPokemons;
+    } else {
+      return allPokemons.filter((pokemon: { generation: number; }) => pokemon.generation === generation);
+    }
   }
 
 }

@@ -10,11 +10,12 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public titles: Map<string, string> = new Map([
-    ['/home', 'Home'],
-    ['/generations', "Generations"],
-    ['/contact', 'Contact'],
-  ])
+  public titles: Array<any> = [
+    { url: '/home', name: 'Accueil' },
+    { url: '/pokemons', name: 'Tous les pokémons' },
+    { url: '/generations/1', name: 'Pokémons par génération' },
+    { url: '/contact', name: 'Me contacter' },
+  ]
   public clickCount: number = 0
 
   plus() {
